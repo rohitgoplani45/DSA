@@ -28,5 +28,37 @@ def second_largest(arr):
     return second_largest 
     pass
 
+#frequency counting
+def count_occurrences(arr, target):
+    count = 0
+    for i in range(len(arr)):
+        count += (arr[i]==target)
+    return count
+    pass
+
+
+#Given an array, count how many elements are greater than 5.
+def count_greater_than_five(arr):
+    count=0
+    for i in range(len(arr)):
+        if arr[i]>5:
+            count += 1
+    return count
+    pass
+
+
+
+#Find the index of the largest element in the array.
+def index_of_largest(arr):
+    max_number=float('-inf')
+    value=-1
+    for i in range(len(arr)):
+        if arr[i]>max_number:
+            max_number=arr[i]
+            value=i
+    return value
+    pass
+
+
 
     

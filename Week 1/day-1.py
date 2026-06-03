@@ -1,6 +1,5 @@
 # Sum of digits in a number
-"""
-n = int(input("Enter a number: "))
+"""n = int(input("Enter a number: "))
 
 total = 0
 
@@ -42,7 +41,7 @@ else:
 
 print(result)
 
-# in place of this whole if vlock we can directly write below line
+# in place of this whole if block we can directly write below line
 print(original_number == rev)
 
 
@@ -59,9 +58,5 @@ while n>0:
 print(total)
 """
 
-#2520. Count the Digits That Divide a Number
-class Solution:
-    def countDigits(self, num: int) -> int:
-        n=count(num)
         
 
