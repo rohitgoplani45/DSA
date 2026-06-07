@@ -13,14 +13,6 @@ for i in arr:
         count+=1
 print(count)
 
-#maximum number
-arr=[1,3,2,8,54,5,7,9]
-maximum=arr[0]
-for i in range(len(arr)):
-    if arr[i]>maximum:
-        maximum=arr[i]
-print(maximum)
-
 #odd numbers count
 arr=[1,3,2,8,54,5,7,9]
 count=0
@@ -28,6 +20,14 @@ for i in arr:
     if i%2!=0:
         count+=1
 print(count)
+
+#maximum number
+arr=[1,3,2,8,54,5,7,9]
+maximum=arr[0]
+for i in range(len(arr)):
+    if arr[i]>maximum:
+        maximum=arr[i]
+print(maximum)
 
 #Minimum element
 arr=[1,3,2,8,54,5,7,9]
