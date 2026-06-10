@@ -1,88 +1,57 @@
-#Return the number of unique elements in the array.
-def count_unique(arr):
-    s=set()
-    for i in arr:
-        s.add(i)
-    return len(s)
+#LIST-COMPREHENSIONS
+
+numbers = []
+
+for i in range(5):
+    numbers.append(i)
+
+print(numbers)
+
+
+# The pattern is 
+#[expression for item in iterable]
+
+#Create a list containing the squares of all numbers from 1 to 5.
+def generate_squares():
+    squares=[i*i for i in range(1,6)]
+
+    return squares
+    pass
+
+#Create a list containing only the even numbers from 1 to 10.
+def get_even_numbers():
+    even_numbers=[i for i in range(1,11) if i%2==0]
+    return even_numbers
     pass
 
 
-def count_unique(arr):
-    s=set()
-    unique_char=0
-    for i in arr:
-        if i in s:
-            pass
-        if i not in s:
-            s.add(i)
-            unique_char += 1
-    return unique_char
-    pass
+Big-O = How running time grows as input size grows
+n = 10   → 10 operations
+n = 100  → 100 operations
+n = 1000 → 1000 operations
 
-#Check if array contains any duplicate value
-def contains_duplicate(arr):
-    s=set()
-    duplicate_value=False
-    for i in arr:
-        if i not in s:
-            s.add(i)
-        elif i in s:
-            duplicate_value=True
-            break
-    return duplicate_value
-    pass
+We call the time complexity = O(n)
 
-def contains_duplicate(arr):
-    seen = set()
-    for num in arr:
-        if num in seen:
-            return True
-        seen.add(num)
-return False
+The 3 Complexities You Must Recognize First
+
+O(1) — Constant Time
+x = arr[0]
+no matter what array size is
+
+#O(n) — Linear Time
+for i in arr:
+    print(i)
+
+#O(n²) — Quadratic Time
+for i in arr:
+    for j in arr:
+        print(i, j)
 
 
-#Return True if all elements in the array are unique.
-def all_unique(arr):
-    uniq_elem=True
-    s=set()
-    for i in arr:
-        if i not in s:
-            s.add(i)
-        elif i in s:
-            return False
-    return True
-    pass
+Rule 3: Side-by-Side Loops
+O(n) + O(n) → O(2n) → O(n)
 
-def all_unique(arr):
-    s= set()
-    for i in arr:
-        if i in s:
-            return False
+(drop constants)
 
-        s.add(i)
-
-    return True
-    
-#Return an array containing only the unique elements in their first appearance order.
-def remove_duplicates(arr):
-    s=set()
-    result=[]
-    for i in arr:
-        if i not in s:
-            s.add(i)
-            result.append(i)
-    return result
-    pass
-
-#Return the first duplicate value in the array.
-def first_duplicate(arr):
-    s=set()
-    for i in arr:
-        if i in s:
-            return i
-        s.add(i)
-    return None
-    pass
-
-    
-    
+Rule 4: Keep Largest Term
+O(n + n²) → O(n²)

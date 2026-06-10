@@ -1,98 +1,88 @@
-#Given a dictionary, return the age of the person.
-def get_age(person):
-    age_of_person=0
-    for key in person:
-        if key == "age":
-            age_of_person=person[key]
-    return age_of_person
-    pass
-
-def get_age(person):
-    return person["age"]
+#Return the number of unique elements in the array.
+def count_unique(arr):
+    s=set()
+    for i in arr:
+        s.add(i)
+    return len(s)
     pass
 
 
-# add city indore to the dictionary and return dictionary
-def add_city(person):
-    person["city"]="Indore"
-    return person
+def count_unique(arr):
+    s=set()
+    unique_char=0
+    for i in arr:
+        if i in s:
+            pass
+        if i not in s:
+            s.add(i)
+            unique_char += 1
+    return unique_char
     pass
 
-#Create a frequency dictionary for an array.
-def frequency_count(arr):
-    freq_dict={}
-    for i in range(len(arr)):
-        if arr[i] in freq_dict:
-            freq_dict[arr[i]]+=1
-        else:
-            freq_dict[arr[i]]=1
-    return freq_dict
+#Check if array contains any duplicate value
+def contains_duplicate(arr):
+    s=set()
+    duplicate_value=False
+    for i in arr:
+        if i not in s:
+            s.add(i)
+        elif i in s:
+            duplicate_value=True
+            break
+    return duplicate_value
+    pass
+
+def contains_duplicate(arr):
+    seen = set()
+    for num in arr:
+        if num in seen:
+            return True
+        seen.add(num)
+return False
+
+
+#Return True if all elements in the array are unique.
+def all_unique(arr):
+    uniq_elem=True
+    s=set()
+    for i in arr:
+        if i not in s:
+            s.add(i)
+        elif i in s:
+            return False
+    return True
+    pass
+
+def all_unique(arr):
+    s= set()
+    for i in arr:
+        if i in s:
+            return False
+
+        s.add(i)
+
+    return True
     
-#Given a string, return a dictionary containing the frequency of each character.
-def char_frequency(s):
-    freq_dict={}
-    for ch in s:
-        if ch in freq_dict:
-            freq_dict[ch]+=1
-        else:
-            freq_dict[ch]=1
-    return freq_dict
+#Return an array containing only the unique elements in their first appearance order.
+def remove_duplicates(arr):
+    s=set()
+    result=[]
+    for i in arr:
+        if i not in s:
+            s.add(i)
+            result.append(i)
+    return result
     pass
 
-#Given a string, return the character that appears the most times.
-def char_frequency(s):
-    freq_dict={}
-
-    #Phase 1
-    for ch in s:
-        if ch in freq_dict:
-            freq_dict[ch]+=1
-        else:
-            freq_dict[ch]=1
-
-    #Phase 2
-    max_count=0
-    max_count_char=""
-    for key in freq_dict:
-        if freq_dict[key]>max_count:
-            max_count=freq_dict[key]
-            max_count_char=key
-    return max_count_char
-
+#Return the first duplicate value in the array.
+def first_duplicate(arr):
+    s=set()
+    for i in arr:
+        if i in s:
+            return i
+        s.add(i)
+    return None
     pass
 
-#Rewrite frequency counting using .get().
-def frequency_count(arr):
-    freq_dict={}
-    for number in arr:
-        freq_dict[number]= freq_dict.get(number,0)+1
-    return freq_dict
-    pass
-
-
-#Return the first character that appears exactly once.
-def first_non_repeating(s):
-    freq_dict={}
-    for i in s:
-        freq_dict[i]= freq_dict.get(i,0)+1
-    ch=""
-    for m in s:
-        if freq_dict[m]==1:
-            ch=m  
-            break
-    return ch  
-    pass
-
-#Rewrite first_non_repeating(s) correctly.
-def first_non_repeating(s):
-    freq_dict={}
-    for i in s:
-        freq_dict[i]= freq_dict.get(i,0)+1
-    ch = None
-    for m in s:
-        if freq_dict[m]==1:
-            ch=m
-            break
-    return ch
-    pass
-
+    
+    
